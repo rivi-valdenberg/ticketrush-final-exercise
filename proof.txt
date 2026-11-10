@@ -1,0 +1,69 @@
+### git worktree list
+C:/Users/user1/Desktop/git1/ticketrush               d561852 [main]
+C:/Users/user1/Desktop/git1/ticketrush-early-access  9e0c8a8 [feature/early-access]
+C:/Users/user1/Desktop/git1/ticketrush-hotfix        7fe0023 [hotfix/price]
+C:/Users/user1/Desktop/git1/ticketrush-noa-review    b2be3ab [review/noa-refund]
+C:/Users/user1/Desktop/git1/ticketrush-security      0da6dc2 [security/untrack-api-key]
+C:/Users/user1/Desktop/git1/ticketrush-waitlist      2663a8f [feature/waitlist]
+
+### git branch -a -vv
++ feature/early-access      9e0c8a8 (C:/Users/user1/Desktop/git1/ticketrush-early-access) feat(pricing): raise club member ticket cap from 4 to 6 per order
++ feature/waitlist          2663a8f (C:/Users/user1/Desktop/git1/ticketrush-waitlist) feat(waitlist): add joinWaitlist for sold-out sign-ups
++ hotfix/price              7fe0023 (C:/Users/user1/Desktop/git1/ticketrush-hotfix) fix(format): revert broken price formatting that showed 0.00 to customers
+* main                      d561852 [origin/main: ahead 16] Merge branch 'security/untrack-api-key'
++ review/noa-refund         b2be3ab (C:/Users/user1/Desktop/git1/ticketrush-noa-review) review: noa/refund is not ready to merge - refund formula includes the service fee
++ security/untrack-api-key  0da6dc2 (C:/Users/user1/Desktop/git1/ticketrush-security) security: ignore js/config.js and add config.example.js without a real key
+  remotes/origin/dana/promo d4b1e35 test: add student discount tests
+  remotes/origin/main       6e5b25d feat: friendlier message for empty quantity
+  remotes/origin/noa/refund f7e8785 test: refund tests
+  remotes/origin/ruth/fixes fee9f58 wip: try new fonts
+
+### git log --graph --oneline --all -n 80
+*   d561852 (HEAD -> main) Merge branch 'security/untrack-api-key'
+|\  
+| * 0da6dc2 (security/untrack-api-key) security: ignore js/config.js and add config.example.js without a real key
+* |   92cd5a8 (tag: v1.1) merge: raise member cap to 6 into main
+|\ \  
+| |/  
+|/|   
+| * 9e0c8a8 (feature/early-access) feat(pricing): raise club member ticket cap from 4 to 6 per order
+* | b01248d security: add .gitignore entry and config.example.js without a real key
+* | 15c40a2 security: stop tracking js/config.js which held the payment API key
+* | 7243346 fix: correct concert date in events.js
+* |   d58f58e Merge branch 'feature/waitlist'
+|\ \  
+| |/  
+|/|   
+| * 2663a8f (feature/waitlist) feat(waitlist): add joinWaitlist for sold-out sign-ups
+* | 4c58034 Merge branch 'main' into feature/early-access
+|\| 
+| * 7fe0023 (hotfix/price) fix(format): revert broken price formatting that showed 0.00 to customers
+* | 4cc94c8 test: update student test for calcTotal(qty, isMember, isStudent)
+* |   fbcd905 merge: combine student promo (dana/promo) with early access
+|\ \  
+| * | d4b1e35 (origin/dana/promo) test: add student discount tests
+| * | 0841085 feat: student discount (15%)
+| |/  
+* / a9ac383 feat(pricing): add 20% member discount and 4-ticket cap
+|/  
+| * b2be3ab (review/noa-refund) review: noa/refund is not ready to merge - refund formula includes the service fee
+| * f7e8785 (origin/noa/refund) test: refund tests
+| * 61bfedd feat: refund calculation for cancelled orders
+|/  
+| * fee9f58 (origin/ruth/fixes) wip: try new fonts
+| * 72063d7 debug: dump state to console
+| * 20cd6a9 WIP: try removing ticket limits
+| * 8284d98 fix: correct concert date in events.js
+| * 339324e WIP: new checkout flow (do not merge)
+|/  
+* 6e5b25d (origin/main) feat: friendlier message for empty quantity
+* 9119fe2 fix: typo in hero heading
+* a61f4ad feat: add footer with links
+* 73924c4 perf: faster price formatting
+* 03bd4dd docs: update artist lineup text
+* c44fbf8 feat: add early-access promo banner
+* 62f48b5 (tag: v1.0) feat: purchase page UI
+* f4c58bc feat: payment provider config
+* 2cc7e97 feat: event details data
+* 8a944f6 feat: ticket price calculation with tests
+* ed1b1e9 Initial commit: project skeleton and exercise tooling
